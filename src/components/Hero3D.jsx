@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
-import { ArrowRight, Rocket } from 'lucide-react';
+import { ArrowRight, Rocket, ShieldCheck, Zap } from 'lucide-react';
 
 export default function Hero3D() {
   return (
@@ -36,10 +36,28 @@ export default function Hero3D() {
               Get in touch
             </a>
           </div>
+
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl">
+            <Feature icon={<Zap size={16} />} title="Blazing performance" caption="99+ Lighthouse" />
+            <Feature icon={<ShieldCheck size={16} />} title="Accessible by default" caption="WCAG minded" />
+            <Feature icon={<Rocket size={16} />} title="Motion-first" caption="Subtle & purposeful" />
+          </div>
         </motion.div>
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent" />
     </section>
+  );
+}
+
+function Feature({ icon, title, caption }) {
+  return (
+    <div className="flex items-start gap-2 rounded-lg border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 backdrop-blur px-3 py-2">
+      <div className="text-indigo-500 mt-0.5">{icon}</div>
+      <div>
+        <div className="text-sm font-medium text-neutral-900 dark:text-white">{title}</div>
+        <div className="text-xs text-neutral-600 dark:text-neutral-300">{caption}</div>
+      </div>
+    </div>
   );
 }

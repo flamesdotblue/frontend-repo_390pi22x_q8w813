@@ -42,6 +42,15 @@ export default function App() {
                   <dd className="text-3xl font-extrabold">25</dd>
                 </div>
               </dl>
+
+              <div className="mt-6">
+                <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">Core stack</h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {['React', 'TypeScript', 'Next.js', 'Tailwind', 'Framer Motion', 'Radix UI', 'Zustand', 'Vite'].map((t) => (
+                    <span key={t} className="text-[11px] px-2 py-1 rounded-full bg-black/5 dark:bg-white/5 text-neutral-700 dark:text-neutral-200 border border-black/10 dark:border-white/10">{t}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
